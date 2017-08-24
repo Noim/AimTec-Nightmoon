@@ -85,6 +85,7 @@
     <Compile Include="MyPlugin\Tristana.cs" />
     <Compile Include="MyPlugin\TwistedFate.cs" />
     <Compile Include="MyPlugin\Twitch.cs" />
+    <Compile Include="MyPlugin\Urgot.cs" />
     <Compile Include="MyPlugin\Varus.cs" />
     <Compile Include="MyPlugin\Vayne.cs" />
     <Compile Include="MyPlugin\Xayah.cs" />

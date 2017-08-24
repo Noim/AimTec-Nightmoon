@@ -18,7 +18,7 @@
         private static readonly string[] all =
         {
             "Ashe", "Caitlyn", "Corki", "Draven", "Ezreal", "Graves", "Jhin", "Jinx", "Kalista", "KogMaw", "Lucian",
-            "Quinn", "Sivir", "Tristana", "TwistedFate", "Twitch", "Varus", "Vayne", "Xayah", "MissFortune"
+            "Quinn", "Sivir", "Tristana", "TwistedFate", "Twitch", "Varus", "Vayne", "Xayah", "MissFortune", "Urgot"
         };
 
         public MyChampions()
@@ -83,71 +83,7 @@
             var myItemManager = new MyUtility.MyItemManager();
             //var myAutoLevelManager = new MyUtility.MyAutoLevelManager();
 
-            switch (ObjectManager.GetLocalPlayer().ChampionName)
-            {
-                case "Ashe":
-                    var ashePlugin = new MyPlugin.Ashe();
-                    break;
-                case "Caitlyn":
-                    var caitlynPlugin = new MyPlugin.Caitlyn();
-                    break;
-                case "Corki":
-                    var corkiPlugin = new MyPlugin.Corki();
-                    break;
-                case "Draven":
-                    var dravenPlugin = new MyPlugin.Draven();
-                    break;
-                case "Ezreal":
-                    var ezrealPlugin = new MyPlugin.Ezreal();
-                    break;
-                case "Graves":
-                    var gravesPlugin = new MyPlugin.Graves();
-                    break;
-                case "Jhin":
-                    var jhinPlugin = new MyPlugin.Jhin();
-                    break;
-                case "Jinx":
-                    var jinxPlugin = new MyPlugin.Jinx();
-                    break;
-                case "Kalista":
-                    var kalistaPlugin = new MyPlugin.Kalista();
-                    break;
-                case "KogMaw":
-                    var kogMawPlugin = new MyPlugin.KogMaw();
-                    break;
-                case "Lucian":
-                    var lucianPlugin = new MyPlugin.Lucian();
-                    break;
-                case "MissFortune":
-                    var missFortunePlugin = new MyPlugin.MissFortune();
-                    break;
-                case "Quinn":
-                    var quinnPlugin = new MyPlugin.Quinn();
-                    break;
-                case "Sivir":
-                    var sivirPlugin = new MyPlugin.Sivir();
-                    break;
-                case "Tristana":
-                    var tristanaPlugin = new MyPlugin.Tristana();
-                    break;
-                case "TwistedFate":
-                    var twistedFatePlugin = new MyPlugin.TwistedFate();
-                    break;
-                case "Twitch":
-                    var twitchPlugin = new MyPlugin.Twitch();
-                    break;
-                case "Varus":
-                    var varusPlugin = new MyPlugin.Varus();
-                    break;
-                case "Vayne":
-                    var vaynePlugin = new MyPlugin.Vayne();
-                    break;
-                case "Xayah":
-                    var xayahPlugin = new MyPlugin.Xayah();
-                    break;
-            }
-
-            //LoadChampionsPlugin();
+            LoadChampionsPlugin();
 
             Console.WriteLine("SharpShooter: " + ObjectManager.GetLocalPlayer().ChampionName +
                               " Load Success, Made By NightMoon");
@@ -155,7 +91,7 @@
 
         internal static object LoadChampionsPlugin()
         {
-            var instance = Activator.CreateInstance("SharpShooter", "MyPlugin." + ObjectManager.GetLocalPlayer().ChampionName);
+            var instance = Activator.CreateInstance("SharpShooter", "SharpShooter.MyPlugin." + ObjectManager.GetLocalPlayer().ChampionName);
             return instance;
         }
     }
