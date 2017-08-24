@@ -18,7 +18,7 @@
         {
             var selectTarget = TargetSelector.Implementation.GetSelectedTarget();
 
-            if (selectTarget != null && selectTarget.IsValidAutoRange())
+            if (selectTarget != null && selectTarget.IsValidTarget(range))
             {
                 if (!checkKillAble || !selectTarget.IsUnKillable())
                 {
@@ -31,7 +31,7 @@
 
             var orbTarget = Orbwalker.Implementation.GetOrbwalkingTarget() as Obj_AI_Hero;
 
-            if (ForcusOrbwalkerTarget && orbTarget != null && orbTarget.IsValidAutoRange())
+            if (ForcusOrbwalkerTarget && orbTarget != null && orbTarget.IsValidTarget(range))
             {
                 if (!checkKillAble || !orbTarget.IsUnKillable())
                 {
@@ -44,7 +44,7 @@
 
             var finallyTarget = TargetSelector.Implementation.GetOrderedTargets(range).FirstOrDefault();
 
-            if (finallyTarget != null && finallyTarget.IsValidAutoRange())
+            if (finallyTarget != null && finallyTarget.IsValidTarget(range))
             {
                 if (!checkKillAble || !finallyTarget.IsUnKillable())
                 {
