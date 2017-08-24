@@ -8,5 +8,14 @@ namespace SharpShooter.MyUtility
 {
     internal class MyAutoLantern
     {
+        public MyAutoLantern()
+        {
+            Initializer();
+        }
+
+        private static void Initializer()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

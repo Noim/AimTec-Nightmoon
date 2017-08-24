@@ -31,7 +31,7 @@
 
             var orbTarget = Orbwalker.Implementation.GetOrbwalkingTarget() as Obj_AI_Hero;
 
-            if (ForcusOrbwalkerTarget && orbTarget != null && orbTarget.IsValidTarget(range))
+            if (ForcusOrbwalkerTarget && orbTarget != null && orbTarget.IsValidTarget(range) && orbTarget.IsValidAutoRange())
             {
                 if (!checkKillAble || !orbTarget.IsUnKillable())
                 {
