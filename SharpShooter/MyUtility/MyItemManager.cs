@@ -425,7 +425,7 @@
 
             private static Obj_AI_Hero GetTarget(float range)
             {
-                return TargetSelector.GetTarget(range, true);
+                return MyTargetSelector.GetTarget(range, true);
             }
         }
 

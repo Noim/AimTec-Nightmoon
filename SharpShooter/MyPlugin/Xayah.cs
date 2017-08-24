@@ -177,7 +177,7 @@
 
         private static void Combo()
         {
-            var target = TargetSelector.GetTarget(1500);
+            var target = MyTargetSelector.GetTarget(1500);
 
             if (target != null && target.IsValidTarget(1500))
             {

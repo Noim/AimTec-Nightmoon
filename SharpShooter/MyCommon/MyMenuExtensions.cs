@@ -6,7 +6,6 @@
     using Aimtec.SDK.Extensions;
     using Aimtec.SDK.Menu;
     using Aimtec.SDK.Menu.Components;
-    using Aimtec.SDK.TargetSelector;
     using Aimtec.SDK.Util;
     using Aimtec.SDK.Util.Cache;
 
@@ -277,9 +276,7 @@
 
             internal static Obj_AI_Hero GetTarget(float range)
             {
-                return
-                    TargetSelector.GetOrderedTargets(range).
-                                   FirstOrDefault(x => x.IsValidTarget(range) && GetHarassTargetEnabled(x.ChampionName));
+                return MyTargetSelector.GetTargets(range).FirstOrDefault(x => x.IsValidTarget(range) && GetHarassTargetEnabled(x.ChampionName));
             }
 
             internal static void AddMana(int defalutValue = 30)
@@ -766,6 +763,17 @@
                 int maxValue, bool enabled = false)
             {
                 killStealMenu.Add(new MenuSliderBool(name + heroName, defaultName, enabled, defaultValue, minValue, maxValue));
+            }
+
+            internal static void AddSlider(string name, string defaultName, int defalueValue, int minValue = 0,
+                int maxValue = 100)
+            {
+                killStealMenu.Add(new MenuSlider(name + heroName, defaultName, defalueValue, minValue, maxValue));
+            }
+
+            internal static MenuSlider GetSlider(string name)
+            {
+                return killStealMenu[name + heroName].As<MenuSlider>();
             }
 
             internal static MenuSliderBool GetSliderBool(string itemName)

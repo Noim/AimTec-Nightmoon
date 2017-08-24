@@ -129,7 +129,7 @@
 
             if (R.Ready)
             {
-                var target = TargetSelector.GetTarget(R.Range);
+                var target = MyTargetSelector.GetTarget(R.Range);
 
                 if (target != null && !target.HasBuffOfType(BuffType.SpellShield) && target.IsValidTarget(R.Range))
                 {
@@ -268,7 +268,7 @@
                     Me.Mana > (R.Ready ? R.GetBasicSpell().Cost : 0) + W.GetBasicSpell().Cost + Q.GetBasicSpell().Cost ||
                     !ComboOption.GetBool("ComboSaveMana").Enabled)
                 {
-                    var target = TargetSelector.GetTarget(W.Range);
+                    var target = MyTargetSelector.GetTarget(W.Range);
 
                     if (target.IsValidTarget(W.Range))
                     {
@@ -284,7 +284,7 @@
 
             if (ComboOption.UseE && E.Ready)
             {
-                var target = TargetSelector.GetTarget(1000);
+                var target = MyTargetSelector.GetTarget(1000);
 
                 if (target != null)
                 {

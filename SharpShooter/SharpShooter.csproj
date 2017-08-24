@@ -59,6 +59,7 @@
     <Compile Include="MyCommon\MyExtraManager.cs" />
     <Compile Include="MyCommon\MyManaManager.cs" />
     <Compile Include="MyCommon\MyMenuExtensions.cs" />
+    <Compile Include="MyCommon\MyTargetSelector.cs" />
     <Compile Include="MyLibrary\Geometry\Polygons.cs" />
     <Compile Include="MyLibrary\Gapcloser\Gapcloser.cs" />
     <Compile Include="MyLibrary\Items\Item.cs" />

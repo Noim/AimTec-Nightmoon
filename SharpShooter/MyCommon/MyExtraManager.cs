@@ -85,6 +85,10 @@
                 {
                     damage += MyPlugin.Vayne.GetWDamage(target);
                 }
+                else if (ObjectManager.GetLocalPlayer().ChampionName == "Urgot")
+                {
+                    damage += MyPlugin.Urgot.GetWDamage(target);
+                }
                 else
                 {
                     damage += ObjectManager.GetLocalPlayer().GetSpellDamage(target, SpellSlot.W);
@@ -132,7 +136,14 @@
 
             if (r && ObjectManager.GetLocalPlayer().GetSpell(SpellSlot.R).State == SpellState.Ready)
             {
-                damage += ObjectManager.GetLocalPlayer().GetSpellDamage(target, SpellSlot.R);
+                if (ObjectManager.GetLocalPlayer().ChampionName == "Urgot" && target.Type == GameObjectType.obj_AI_Hero)
+                {
+                    damage += MyPlugin.Urgot.GetRDamage(target as Obj_AI_Hero);
+                }
+                else
+                {
+                    damage += ObjectManager.GetLocalPlayer().GetSpellDamage(target, SpellSlot.R);
+                }
             }
 
             if (attack)
@@ -181,11 +192,11 @@
                 case "SRU_Dragon_Water":
                 case "SRU_Red":
                 case "SRU_RiftHerald":
-                    /*case "SRU_Murkwolf":
-                    case "SRU_Gromp":
-                    case "Sru_Crab":
-                    case "SRU_Razorbeak":
-                    case "SRU_Krug":*/
+                case "SRU_Murkwolf":
+                case "SRU_Gromp":
+                case "Sru_Crab":
+                case "SRU_Razorbeak":
+                case "SRU_Krug":
                     return true;
                 default:
                     return false;

@@ -128,7 +128,7 @@
 
         private static void Combo()
         {
-            var target = TargetSelector.GetTarget(E.Range);
+            var target = MyTargetSelector.GetTarget(E.Range);
 
             if (target.IsValidTarget(E.Range))
             {

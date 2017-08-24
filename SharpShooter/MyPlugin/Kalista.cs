@@ -234,7 +234,7 @@
                 ForcusAttack();
             }
 
-            var target = TargetSelector.GetTarget(Q.Range);
+            var target = MyTargetSelector.GetTarget(Q.Range);
 
             if (target != null && target.IsValidTarget(Q.Range))
             {

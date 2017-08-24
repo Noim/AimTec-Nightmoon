@@ -136,7 +136,7 @@
         {
             if (R.Ready && R.GetBasicSpell().Ammo > 0)
             {
-                var target = TargetSelector.GetTarget(R.Range);
+                var target = MyTargetSelector.GetTarget(R.Range);
 
                 if (target.IsValidTarget(R.Range))
                 {
@@ -193,7 +193,7 @@
 
         private static void Combo()
         {
-            var target = TargetSelector.GetTarget(R.Range);
+            var target = MyTargetSelector.GetTarget(R.Range);
 
             if (target.IsValidTarget(R.Range) && !target.IsUnKillable() && (!target.IsValidAutoRange() || !Orbwalker.CanAttack()))
             {

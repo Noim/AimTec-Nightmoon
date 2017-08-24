@@ -148,7 +148,7 @@
 
         private static void OneKeyCastR()
         {
-            var target = TargetSelector.GetTarget(R.Range);
+            var target = MyTargetSelector.GetTarget(R.Range);
 
             if (target.IsValidTarget(R.Range) && !target.IsValidTarget(MiscOption.GetSlider("R", "RRange").Value))
             {
@@ -237,7 +237,7 @@
 
         private static void Combo()
         {
-            var target = TargetSelector.GetTarget(EQ.Range);
+            var target = MyTargetSelector.GetTarget(EQ.Range);
 
             if (target.IsValidTarget(EQ.Range))
             {

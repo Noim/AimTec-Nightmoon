@@ -193,7 +193,7 @@
 
         private static void SemiRLogic()
         {
-            var target = TargetSelector.GetTarget(R.Range);
+            var target = MyTargetSelector.GetTarget(R.Range);
 
             if (target.IsValidTarget(R.Range))
             {
@@ -259,7 +259,7 @@
         {
             if (ComboOption.UseW && W.Ready)
             {
-                var target = TargetSelector.GetTarget(W.Range);
+                var target = MyTargetSelector.GetTarget(W.Range);
 
                 if (target.IsValidTarget(W.Range) && target.DistanceToPlayer() > Q.Range
                     && Me.CountEnemyHeroesInRange(W.Range - 300) <= 2)
@@ -275,7 +275,7 @@
 
             if (ComboOption.UseE && E.Ready)
             {
-                var target = TargetSelector.GetTarget(E.Range);
+                var target = MyTargetSelector.GetTarget(E.Range);
 
                 if (target.IsValidTarget(E.Range))
                 {
@@ -297,7 +297,7 @@
 
             if (ComboOption.UseQ && Q.Ready)
             {
-                var target = TargetSelector.GetTarget(bigGunRange);
+                var target = MyTargetSelector.GetTarget(bigGunRange);
 
                 if (Me.HasBuff("JinxQ"))
                 {

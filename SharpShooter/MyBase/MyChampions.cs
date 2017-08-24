@@ -17,8 +17,8 @@
     {
         private static readonly string[] all =
         {
-            "Ashe", "Caitlyn", "Corki", "Draven", "Ezreal", "Graves", "Jhin", "Jinx", "Kalista", "KogMaw", "Lucian",
-            "Quinn", "Sivir", "Tristana", "TwistedFate", "Twitch", "Varus", "Vayne", "Xayah", "MissFortune", "Urgot"
+            "Ashe", "Caitlyn", "Corki", "Draven", "Ezreal", "Graves", "Jhin", "Jinx", "Kalista", "KogMaw", "MissFortune",
+            "Lucian", "Quinn", "Sivir", "Tristana", "TwistedFate", "Twitch", "Urgot", "Varus", "Vayne", "Xayah"
         };
 
         public MyChampions()

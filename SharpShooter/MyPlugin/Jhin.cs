@@ -172,7 +172,7 @@
             }
             else
             {
-                target = TargetSelector.GetTarget(R.Range);
+                target = MyTargetSelector.GetTarget(R.Range);
             }
 
             if (R.Ready)
@@ -246,7 +246,7 @@
 
                                     if (rPred.HitChance >= HitChance.High)
                                     {
-                                        R.Cast(rPred.UnitPosition);
+                                        R.Cast(rPred.CastPosition);
                                     }
 
                                     return;
@@ -258,7 +258,7 @@
 
                                     if (rPred.HitChance >= HitChance.High)
                                     {
-                                        R.Cast(rPred.UnitPosition);
+                                        R.Cast(rPred.CastPosition);
                                     }
 
                                     return;
@@ -273,7 +273,7 @@
 
                                 if (rPred.HitChance >= HitChance.High)
                                 {
-                                    R.Cast(rPred.UnitPosition);
+                                    R.Cast(rPred.CastPosition);
                                 }
 
                                 return;
@@ -294,7 +294,7 @@
 
                                         if (rPred.HitChance >= HitChance.High)
                                         {
-                                            R.Cast(rPred.UnitPosition);
+                                            R.Cast(rPred.CastPosition);
                                         }
 
                                         return;
@@ -306,7 +306,7 @@
 
                                         if (rPred.HitChance >= HitChance.High)
                                         {
-                                            R.Cast(rPred.UnitPosition);
+                                            R.Cast(rPred.CastPosition);
                                         }
 
                                         return;
@@ -321,7 +321,7 @@
 
                                     if (rPred.HitChance >= HitChance.High)
                                     {
-                                        R.Cast(rPred.UnitPosition);
+                                        R.Cast(rPred.CastPosition);
                                     }
 
                                     return;
@@ -426,7 +426,7 @@
 
             if (ComboOption.UseW && W.Ready)
             {
-                var target = TargetSelector.GetTarget(W.Range);
+                var target = MyTargetSelector.GetTarget(W.Range);
 
                 if (target != null && target.IsValidTarget(W.Range))
                 {
@@ -456,8 +456,8 @@
 
             if (ComboOption.UseQ && Q.Ready)
             {
-                var target = TargetSelector.GetTarget(Q.Range + 300);
-                var qTarget = TargetSelector.GetTarget(Q.Range);
+                var target = MyTargetSelector.GetTarget(Q.Range + 300);
+                var qTarget = MyTargetSelector.GetTarget(Q.Range);
 
                 if (qTarget.IsValidTarget(Q.Range) && !Orbwalker.CanAttack())
                 {
@@ -487,7 +487,7 @@
 
             if (ComboOption.UseE && E.Ready && Game.TickCount - lastETime > 2500 && !isAttacking)
             {
-                var target = TargetSelector.GetTarget(E.Range);
+                var target = MyTargetSelector.GetTarget(E.Range);
 
                 if (target != null && target.IsValidTarget(E.Range))
                 {

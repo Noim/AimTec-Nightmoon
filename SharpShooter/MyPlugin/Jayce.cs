@@ -445,7 +445,7 @@
                 }
                 else
                 {
-                    var qTarget = TargetSelector.GetTarget(QE.Range);
+                    var qTarget = MyTargetSelector.GetTarget(QE.Range);
 
                     if (qTarget != null && qTarget.IsValidTarget(QE.Range) && qCd == 0)
                     {

@@ -145,7 +145,7 @@
                     return;
                 }
 
-                var target = TargetSelector.GetOrderedTargets(R.Range).FirstOrDefault(x => !x.HaveShiledBuff());
+                var target = MyTargetSelector.GetTarget(R.Range);
 
                 if (target.IsValidTarget(R.Range))
                 {
@@ -249,7 +249,7 @@
         {
             if (ComboOption.UseE && E.Ready && !Q.IsCharging && Game.TickCount - lastQTime > 750 + Game.Ping)
             {
-                var target = TargetSelector.GetTarget(E.Range);
+                var target = MyTargetSelector.GetTarget(E.Range);
 
                 if (target != null && target.IsValidTarget(E.Range) && (GetBuffCount(target) >= ComboOption.GetSlider("ComboEPassive").Value ||
                     W.GetBasicSpell().Level == 0 || target.Health < Me.GetSpellDamage(target, SpellSlot.E) + GetWDamage(target) ||
@@ -266,7 +266,7 @@
 
             if (ComboOption.UseQ && Q.Ready && Game.TickCount - lastETime > 750 + Game.Ping)
             {
-                var target = TargetSelector.GetTarget(1600f);
+                var target = MyTargetSelector.GetTarget(1600f);
 
                 if (target != null && target.IsValidTarget(1600f))
                 {
@@ -332,7 +332,7 @@
 
             if (ComboOption.UseR && R.Ready)
             {
-                var target = TargetSelector.GetTarget(R.Range);
+                var target = MyTargetSelector.GetTarget(R.Range);
 
                 if (target.IsValidTarget(R.Range) && ComboOption.GetBool("ComboRSolo").Value &&
                     Me.CountEnemyHeroesInRange(1000) <= 2)

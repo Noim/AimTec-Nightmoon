@@ -136,7 +136,7 @@
 
         private static void SemiRLogic()
         {
-            var target = TargetSelector.GetTarget(R.Range - 150);
+            var target = MyTargetSelector.GetTarget(R.Range - 150);
 
             if (target.IsValidTarget(R.Range))
             {
@@ -185,7 +185,7 @@
 
         private static void Combo()
         {
-            var target = TargetSelector.GetTarget(Q2.Range);
+            var target = MyTargetSelector.GetTarget(Q2.Range);
 
             if (target.IsValidTarget(Q2.Range))
             {

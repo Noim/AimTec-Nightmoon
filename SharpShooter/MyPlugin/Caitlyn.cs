@@ -149,7 +149,7 @@
 
         private static void OneKeyCastR()
         {
-            var target = TargetSelector.GetTarget(R.Range);
+            var target = MyTargetSelector.GetTarget(R.Range);
 
             if (target != null && target.IsValidTarget(R.Range))
             {
@@ -162,7 +162,7 @@
             if (MiscOption.GetBool("Q", "AutoQ").Enabled && Q.Ready &&
                 Orbwalker.Mode != OrbwalkingMode.Combo && Orbwalker.Mode != OrbwalkingMode.Mixed)
             {
-                var target = TargetSelector.GetTarget(Q.Range - 50);
+                var target = MyTargetSelector.GetTarget(Q.Range - 50);
 
                 if (target.IsValidTarget(Q.Range) && !target.CanMoveMent())
                 {
@@ -234,7 +234,7 @@
 
         private static void Combo()
         {
-            var target = TargetSelector.GetTarget(R.Range);
+            var target = MyTargetSelector.GetTarget(R.Range);
 
             if (target.IsValidTarget(R.Range) && !target.IsUnKillable())
             {
@@ -473,7 +473,7 @@
 
             if (E.Ready && Q.Ready)
             {
-                var target = TargetSelector.GetTarget(E.Range);
+                var target = MyTargetSelector.GetTarget(E.Range);
 
                 if (target.IsValidTarget(E.Range))
                 {

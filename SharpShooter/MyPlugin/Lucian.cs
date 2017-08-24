@@ -164,7 +164,7 @@
 
         private static void SemiRLogic()
         {
-            var target = TargetSelector.GetTarget(R.Range);
+            var target = MyTargetSelector.GetTarget(R.Range);
 
             if (target != null && !target.HaveShiledBuff() && target.IsValidTarget(R.Range))
             {
@@ -216,7 +216,7 @@
         {
             if (ComboOption.UseR && R.Ready)
             {
-                var target = TargetSelector.GetTarget(R.Range);
+                var target = MyTargetSelector.GetTarget(R.Range);
 
                 if (target.IsValidTarget(R.Range) && !target.IsUnKillable() && !Me.IsUnderEnemyTurret() &&
                     !target.IsValidTarget(Me.GetFullAttackRange(target)))
@@ -252,7 +252,7 @@
 
             if (ComboOption.GetBool("ComboEDash").Enabled && E.Ready)
             {
-                var target = TargetSelector.GetTarget(950);
+                var target = MyTargetSelector.GetTarget(950);
 
                 if (target.IsValidTarget(950) && !target.IsValidTarget(550))
                 {
@@ -262,7 +262,7 @@
 
             if (Q.Ready && !havePassive && Me.Buffs.All(x => x.Name.ToLower() != "lucianpassivebuff") && !Me.IsDashing())
             {
-                var target = TargetSelector.GetTarget(Q2.Range);
+                var target = MyTargetSelector.GetTarget(Q2.Range);
 
                 if (ComboOption.UseQ)
                 {

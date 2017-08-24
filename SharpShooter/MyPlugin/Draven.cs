@@ -222,7 +222,7 @@
 
                 if (AxeOption.GetBool("NotCatchKS").Enabled && Orbwalker.Mode == OrbwalkingMode.Combo)
                 {
-                    var target = TargetSelector.GetTarget(800, true);
+                    var target = MyTargetSelector.GetTarget(800, true);
 
                     if (target != null && target.IsValidTarget(800) &&
                         target.DistanceToPlayer() > target.BoundingRadius + Me.BoundingRadius + 200 &&
@@ -329,7 +329,7 @@
         {
             if (MiscOption.GetKey("R", "SemiRKey").Enabled && Me.SpellBook.GetSpell(SpellSlot.R).Level > 0 && R.Ready)
             {
-                var target = TargetSelector.GetTarget(R.Range);
+                var target = MyTargetSelector.GetTarget(R.Range);
 
                 if (target.IsValidTarget(R.Range) && !target.IsValidTarget(MiscOption.GetSlider("R", "GlobalRMin").Value))
                 {
@@ -350,7 +350,7 @@
 
         private static void ComboEvent()
         {
-            var target = TargetSelector.GetTarget(E.Range);
+            var target = MyTargetSelector.GetTarget(E.Range);
 
             if (target != null && target.IsValidTarget(E.Range))
             {

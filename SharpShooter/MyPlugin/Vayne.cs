@@ -268,7 +268,7 @@
 
                 if (Me.CountEnemyHeroesInRange(Me.AttackRange) == 0 && Me.CountEnemyHeroesInRange(900) > 0)
                 {
-                    var target = TargetSelector.GetTarget(900);
+                    var target = MyTargetSelector.GetTarget(900);
 
                     if (target.IsValidTarget())
                     {

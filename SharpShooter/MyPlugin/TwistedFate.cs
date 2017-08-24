@@ -145,7 +145,7 @@
             {
                 if (MiscOption.GetKey("Q", "SemiQ").Enabled)
                 {
-                    var target = TargetSelector.GetTarget(Q.Range);
+                    var target = MyTargetSelector.GetTarget(Q.Range);
 
                     if (target != null && target.IsValidTarget(Q.Range))
                     {
@@ -217,7 +217,7 @@
         {
             if (ComboOption.UseQ && Q.Ready)
             {
-                var target = TargetSelector.GetTarget(Q.Range);
+                var target = MyTargetSelector.GetTarget(Q.Range);
 
                 if (target != null && target.IsValidTarget(Q.Range))
                 {
@@ -247,7 +247,7 @@
 
             if (ComboOption.UseW && W.Ready)
             {
-                var target = TargetSelector.GetTarget(W.Range);
+                var target = MyTargetSelector.GetTarget(W.Range);
 
                 if (target != null && target.IsValidTarget())
                 {
