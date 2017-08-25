@@ -90,7 +90,7 @@
     <Compile Include="MyPlugin\Varus.cs" />
     <Compile Include="MyPlugin\Vayne.cs" />
     <Compile Include="MyPlugin\Xayah.cs" />
-    <Compile Include="MyUtility\MyAutoLantern.cs" />
+    <Compile Include="MyUtility\MyAutoLanternManager.cs" />
     <Compile Include="MyUtility\MyAutoLevelManager.cs" />
     <Compile Include="MyUtility\MyHumanizer.cs" />
     <Compile Include="MyUtility\MyItemManager.cs" />

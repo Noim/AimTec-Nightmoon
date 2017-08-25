@@ -58,6 +58,18 @@
             }
             MyMenuExtensions.myMenu.Add(supportMenu);
 
+            MyMenuExtensions.myMenu.Add(new MenuSeperator("ASDASDG"));
+
+            MyMenuExtensions.UtilityMenu = new Menu("SharpShooter.UtilityMenu", "Utility Settings");
+            MyMenuExtensions.myMenu.Add(MyMenuExtensions.UtilityMenu);
+
+            MyLogic.Orbwalker = new Aimtec.SDK.Orbwalking.Orbwalker();
+            MyLogic.Orbwalker.Attach(MyMenuExtensions.UtilityMenu);
+
+            var myItemManager = new MyUtility.MyItemManager();
+            var myAutoLevelManager = new MyUtility.MyAutoLevelManager();
+            var myAutoLanternManager = new MyUtility.MyAutoLanternManager();
+
             if (
                 all.All(
                     x =>
@@ -71,17 +83,6 @@
                        " Not Support!");
                 return;
             }
-
-            MyMenuExtensions.myMenu.Add(new MenuSeperator("ASDASDG"));
-
-            MyMenuExtensions.UtilityMenu = new Menu("SharpShooter.UtilityMenu", "Utility Settings");
-            MyMenuExtensions.myMenu.Add(MyMenuExtensions.UtilityMenu);
-
-            MyLogic.Orbwalker = new Aimtec.SDK.Orbwalking.Orbwalker();
-            MyLogic.Orbwalker.Attach(MyMenuExtensions.UtilityMenu);
-
-            var myItemManager = new MyUtility.MyItemManager();
-            var myAutoLevelManager = new MyUtility.MyAutoLevelManager();
 
             LoadChampionsPlugin();
 
