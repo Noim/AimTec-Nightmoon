@@ -54,13 +54,6 @@
                 YOffset = 24
             },
         };
-        /*
-        SRU_Baron
-        
-        
-        SRU_Dragon_Elder
-        
-        */
 
         private const int XOffset = 10;
         private static int YOffset = 18;
@@ -117,9 +110,21 @@
 
                 if (hero)
                 {
-                    foreach (var target in GameObjects.EnemyHeroes.Where(h => h.IsValid && h.IsFloatingHealthBarActive))
+                    foreach (
+                        var target in
+                        GameObjects.EnemyHeroes.Where(
+                            h =>
+                                h.IsValid && h.IsFloatingHealthBarActive))
                     {
-                        if (target.ChampionName == "Darius" || target.ChampionName == "Warwick")
+                        Vector2 pos;
+                        Render.WorldToScreen(target.ServerPosition, out pos);
+
+                        if (!Render.IsPointInScreen(pos))
+                        {
+                            return;
+                        }
+
+                        if (target.IsMelee)
                         {
                             YOffset = 12;
                         }
@@ -175,6 +180,14 @@
                     {
                         if (unit.IsValidTarget())
                         {
+                            Vector2 pos;
+                            Render.WorldToScreen(unit.ServerPosition, out pos);
+
+                            if (!Render.IsPointInScreen(pos))
+                            {
+                                return;
+                            }
+
                             var mobOffset = JungleMobOffsetsList.Find(x => x.BaseSkinName == unit.UnitSkinName);
                             if (mobOffset != null)
                             {

@@ -143,17 +143,14 @@
                 return;
             }
 
-            if (Orbwalker.Mode != OrbwalkingMode.None)
+            if (isWActive)
             {
-                if (isWActive)
-                {
-                    Orbwalker.AttackingEnabled = false;
-                    Me.IssueOrder(OrderType.MoveTo, Game.CursorPos);
-                }
-                else
-                {
-                    Orbwalker.AttackingEnabled = true;
-                }
+                Orbwalker.AttackingEnabled = false;
+                Me.IssueOrder(OrderType.MoveTo, Game.CursorPos);
+            }
+            else
+            {
+                Orbwalker.AttackingEnabled = true;
             }
 
             if (MiscOption.GetKey("R", "SemiR").Enabled && R.Ready)
@@ -374,7 +371,7 @@
 
                 if (ComboOption.GetBool("ComboRSolo").Enabled && R.Ready && !target.IsUnKillable() && Me.CountEnemyHeroesInRange(1200) == 1)
                 {
-                    if (target.HealthPercent() > GetRDamage(target, true) &&
+                    if (target.Health > GetRDamage(target, true) &&
                         target.Health <
                         GetRDamage(target, true) + GetWDamage(target, 2) + GetPassiveDamage(target) +
                         Me.GetAutoAttackDamage(target) + (Q.Ready ? Me.GetSpellDamage(target, SpellSlot.Q) : 0) +
