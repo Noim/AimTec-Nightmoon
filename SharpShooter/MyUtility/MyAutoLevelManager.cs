@@ -68,7 +68,7 @@
                 return;
             }
 
-            if (Game.TickCount - lastLevelTime > 6000 + Game.Ping)
+            if (Game.TickCount - lastLevelTime > 5000 + Game.Ping)
             {
                 canbeLevel = false;
             }
@@ -123,62 +123,182 @@
 
         private static void AutoLevelEvent()
         {
-            switch (AutoLevelMenu["SharpShooter.MyUtility.AutoLevelMenu.Mode"].As<MenuList>().Value)
+            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.Q).Level == 0 ||
+                ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.W).Level == 0 ||
+                ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.E).Level == 0)
             {
-                case 0:
-                    {
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
-                        canbeLevel = false;
-                        lastLevelTime = Game.TickCount;
-                    }
-                    break;
-                case 1:
-                    {
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
-                        canbeLevel = false;
-                        lastLevelTime = Game.TickCount;
-                    }
-                    break;
-                case 2:
-                    {
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
-                        canbeLevel = false;
-                        lastLevelTime = Game.TickCount;
-                    }
-                    break;
-                case 3:
-                    {
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
-                        canbeLevel = false;
-                        lastLevelTime = Game.TickCount;
-                    }
-                    break;
-                case 4:
-                    {
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
-                        canbeLevel = false;
-                        lastLevelTime = Game.TickCount;
-                    }
-                    break;
-                case 5:
-                    {
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
-                        ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
-                        canbeLevel = false;
-                        lastLevelTime = Game.TickCount;
-                    }
-                    break;
+                switch (AutoLevelMenu["SharpShooter.MyUtility.AutoLevelMenu.Mode"].As<MenuList>().Value)
+                {
+                    case 0:
+                        {
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.Q).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
+                            }
+
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.W).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
+                            }
+
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.E).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
+                            }
+                        }
+                        break;
+                    case 1:
+                        {
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.Q).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
+                            }
+
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.E).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
+                            }
+
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.W).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
+                            }
+                        }
+                        break;
+                    case 2:
+                        {
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.W).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
+                            }
+
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.Q).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
+                            }
+
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.E).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
+                            }
+                        }
+                        break;
+                    case 3:
+                        {
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.W).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
+                            }
+
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.E).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
+                            }
+
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.Q).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
+                            }
+                        }
+                        break;
+                    case 4:
+                        {
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.E).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
+                            }
+
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.Q).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
+                            }
+
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.W).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
+                            }
+                        }
+                        break;
+                    case 5:
+                        {
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.E).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
+                            }
+
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.W).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
+                            }
+
+                            if (ObjectManager.GetLocalPlayer().SpellBook.GetSpell(SpellSlot.Q).Level == 0)
+                            {
+                                ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
+                            }
+                        }
+                        break;
+                }
+            }
+            else
+            {
+                switch (AutoLevelMenu["SharpShooter.MyUtility.AutoLevelMenu.Mode"].As<MenuList>().Value)
+                {
+                    case 0:
+                        {
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
+                            canbeLevel = false;
+                            lastLevelTime = Game.TickCount;
+                        }
+                        break;
+                    case 1:
+                        {
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
+                            canbeLevel = false;
+                            lastLevelTime = Game.TickCount;
+                        }
+                        break;
+                    case 2:
+                        {
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
+                            canbeLevel = false;
+                            lastLevelTime = Game.TickCount;
+                        }
+                        break;
+                    case 3:
+                        {
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
+                            canbeLevel = false;
+                            lastLevelTime = Game.TickCount;
+                        }
+                        break;
+                    case 4:
+                        {
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
+                            canbeLevel = false;
+                            lastLevelTime = Game.TickCount;
+                        }
+                        break;
+                    case 5:
+                        {
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.E);
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.W);
+                            ObjectManager.GetLocalPlayer().SpellBook.LevelSpell(SpellSlot.Q);
+                            canbeLevel = false;
+                            lastLevelTime = Game.TickCount;
+                        }
+                        break;
+                }
+
             }
         }
     }

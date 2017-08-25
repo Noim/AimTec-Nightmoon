@@ -81,7 +81,7 @@
             MyLogic.Orbwalker.Attach(MyMenuExtensions.UtilityMenu);
 
             var myItemManager = new MyUtility.MyItemManager();
-            //var myAutoLevelManager = new MyUtility.MyAutoLevelManager();
+            var myAutoLevelManager = new MyUtility.MyAutoLevelManager();
 
             LoadChampionsPlugin();
 

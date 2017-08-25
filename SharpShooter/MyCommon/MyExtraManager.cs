@@ -138,7 +138,7 @@
             {
                 if (ObjectManager.GetLocalPlayer().ChampionName == "Urgot" && target.Type == GameObjectType.obj_AI_Hero)
                 {
-                    damage += MyPlugin.Urgot.GetRDamage(target as Obj_AI_Hero);
+                    damage += MyPlugin.Urgot.GetRDamage(target as Obj_AI_Hero, true);
                 }
                 else
                 {

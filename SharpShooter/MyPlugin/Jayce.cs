@@ -333,7 +333,7 @@
 
         private static void OnGapcloser(Obj_AI_Hero target, GapcloserArgs Args)
         {
-            if (E.Ready && target != null && target.IsValidTarget(E2.Range))
+            if (E.Ready && target != null && target.IsValidTarget(E2.Range) && !Args.HaveShield)
             {
                 switch (Args.Type)
                 {

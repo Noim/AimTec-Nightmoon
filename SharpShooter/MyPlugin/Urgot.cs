@@ -108,6 +108,7 @@
             DrawOption.AddE(E);
             DrawOption.AddE(R);
             DrawOption.AddFarm();
+            DrawOption.AddDamageIndicatorToHero(true, true, true, true, true);
 
             Obj_AI_Base.OnProcessSpellCast += OnProcessSpellCast;
             Game.OnUpdate += OnUpdate;
@@ -140,6 +141,19 @@
             if (Me.IsDead || Me.IsRecalling())
             {
                 return;
+            }
+
+            if (Orbwalker.Mode != OrbwalkingMode.None)
+            {
+                if (isWActive)
+                {
+                    Orbwalker.AttackingEnabled = false;
+                    Me.IssueOrder(OrderType.MoveTo, Game.CursorPos);
+                }
+                else
+                {
+                    Orbwalker.AttackingEnabled = true;
+                }
             }
 
             if (MiscOption.GetKey("R", "SemiR").Enabled && R.Ready)
@@ -225,7 +239,7 @@
 
                         if (qPred.HitChance >= HitChance.High)
                         {
-                            Q.Cast(qPred.UnitPosition);
+                            Q.Cast(qPred.CastPosition);
                             return;
                         }
                     }
@@ -240,7 +254,7 @@
                         x =>
                             x.IsValidTarget(R.Range + 500) &&
                             !x.IsValidTarget(KillStealOption.GetSlider("KillStealRDistance").Value) &&
-                            x.HealthPercent() < 25 && KillStealOption.GetKillStealTarget(x.ChampionName)))
+                            x.Health < GetRDamage(x, true) && KillStealOption.GetKillStealTarget(x.ChampionName)))
                 {
                     if (target.IsValidTarget())
                     {
@@ -307,7 +321,7 @@
 
                             if (qPred.HitChance >= HitChance.High)
                             {
-                                Q.Cast(qPred.UnitPosition);
+                                Q.Cast(qPred.CastPosition);
                             }
                         }
                         else
@@ -321,7 +335,7 @@
 
                             if (qPred.HitChance >= HitChance.High)
                             {
-                                Q.Cast(qPred.UnitPosition);
+                                Q.Cast(qPred.CastPosition);
                             }
                         }
                     }
@@ -404,7 +418,7 @@
 
                         if (qPred.HitChance >= HitChance.High)
                         {
-                            Q.Cast(qPred.UnitPosition);
+                            Q.Cast(qPred.CastPosition);
                         }
                     }
                 }
@@ -631,9 +645,9 @@
 
             var rPredOutput = Prediction.Instance.GetPrediction(rPredInput);
 
-            if (rPredOutput.HitChance < HitChance.High ||
+            if (rPredOutput.HitChance < HitChance.High/* ||
                 Collision.GetCollision(new List<Vector3> { target.ServerPosition }, rPredInput)
-                    .Any(x => x.NetworkId != target.NetworkId))
+                    .Any(x => x.NetworkId != target.NetworkId)*/)
             {
                 return Vector3.Zero;
             }
