@@ -54,9 +54,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Gapcloser\Gapcloser.cs" />
+    <Compile Include="Geometry\Polygons.cs" />
     <Compile Include="Items\Item.cs" />
     <Compile Include="Items\ItemExtensions.cs" />
     <Compile Include="Items\ItemID.cs" />
+    <Compile Include="Prediction\CPrediction.cs" />
+    <Compile Include="Prediction\FarmPrediction.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
