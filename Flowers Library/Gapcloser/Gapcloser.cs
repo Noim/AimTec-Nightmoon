@@ -54,6 +54,10 @@
 
         public static Menu Menu;
 
+        public static int MinSearchRange { get; set; } = 550;
+        public static int MaxSearchRange { get; set; } = 700;
+        public static int DefalutHPercent { get; set; } = 100;
+
         static Gapcloser()
         {
             Initialize();
@@ -955,16 +959,16 @@
                     {
                         new MenuBool("Gapcloser." + enemy.ChampionName.ToLower() + ".Enabled", "Enabled"),
                         new MenuSlider("Gapcloser." + enemy.ChampionName.ToLower() + ".Distance",
-                                "If Target Distance To Player <= x", 550, 1, 700),
+                                "If Target Distance To Player <= x", MinSearchRange, 1, MaxSearchRange),
                             new MenuSlider("Gapcloser." + enemy.ChampionName.ToLower() + ".HPercent",
-                                "When Player HealthPercent <= x%", 100, 1, 101)
+                                "When Player HealthPercent <= x%", DefalutHPercent, 1, 101)
                     };
                 Menu.Add(heroMenu);
 
                 if (enemy.IsMelee)
                 {
                     heroMenu.Add(new MenuSliderBool("Gapcloser." + enemy.ChampionName.ToLower() + ".Melee",
-                        "Anti Melee Attack| Player HP <= x%", true, 40, 1, 99));
+                        "Anti Melee Attack| Player HP <= x%", true, DefalutHPercent/2, 1, 99));
                 }
 
                 foreach (var spell in Spells.Where(x => x.ChampionName == enemy.ChampionName))
