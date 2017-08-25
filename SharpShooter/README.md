@@ -1,9 +1,10 @@
 ﻿# Change Log:
 
-Support Champions: Ashe, Caitlyn, Corki, Draven, Ezreal, Graves, Jhin, Jinx, Kalista, KogMaw, Lucian, Quinn, Sivir, Tristana, TwistedFate, Twitch, Varus, Vayne, Xayah <br>
+Support Champions: Ashe, Caitlyn, Corki, Draven, Ezreal, Graves, Jhin, Jinx, Kalista, KogMaw, MissFortune, Lucian, Quinn, Sivir, Tristana, TwistedFate, Twitch, Urgot, Varus, Vayne, Xayah <br>
 
 <br>
 
+V 1.0.2.0: Should be Fix Jhin R Prediction, Add Urgot, Improve Assembly Target Selector Logic, Add AutoLevels and AutoLantern <br>
 V 1.0.1.9: Fix Xayah E Damage Calculate, Fix Tristana Not Work <br>
 V 1.0.1.8: Fix Kalista and Graves, Add DamgeIndicator (Heros and Mobs, but dragon and baron will be have bugs), Improve Spell Farm Logic and MiscOption and DrawOption, Fix TF Card Select problem, Add Humanizer Select Option, Fix Lucian Bugs and Improve KogMaw Combo/KS E Logic <br>
 V 1.0.1.7: Add Kalista % Tristana, Finally Done(Champions) <br>
