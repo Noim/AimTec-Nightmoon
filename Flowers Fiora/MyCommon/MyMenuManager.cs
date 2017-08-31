@@ -22,7 +22,8 @@
                 {
                     MyLogic.Menu.Add(new MenuSeperator("MadebyNightMoon", "Made by NightMoon"));
                     MyLogic.Menu.Add(new MenuSeperator("CreditName", "Cirdit: Brian & Esk0r"));
-                    MyLogic.Menu.Add(new MenuSeperator("SetHoldRadius", "Plz Set Orbwalker-> Misc-> Hold Radius to Zero"));
+                    MyLogic.Menu.Add(new MenuSeperator("willbeRemove", "This Assembly will be Remove"));
+                    MyLogic.Menu.Add(new MenuSeperator("inthisassembly", "Use SharpAIO (new Version)"));
                     MyLogic.Menu.Add(new MenuSeperator("ASDASDF"));
                 }
 

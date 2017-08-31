@@ -21,8 +21,8 @@
                 MyLogic.Menu = new Menu("FlowersDraven", "Flowers Draven", true);
                 {
                     MyLogic.Menu.Add(new MenuSeperator("CreditName", "Made by NightMoon"));
-                    MyLogic.Menu.Add(new MenuSeperator("IfFPSDrop", "If you have FPS Drop Try F5 reload"));
-                    MyLogic.Menu.Add(new MenuSeperator("SetHoldRadius", "And Set Orbwalker-> Misc-> Hold Radius is Zero (will catch better)"));
+                    MyLogic.Menu.Add(new MenuSeperator("willbeRemove", "This Assembly will be Remove"));
+                    MyLogic.Menu.Add(new MenuSeperator("inthisassembly", "Use SharpShooter (new Version)"));
                     MyLogic.Menu.Add(new MenuSeperator("ASDASDF"));
                 }
 

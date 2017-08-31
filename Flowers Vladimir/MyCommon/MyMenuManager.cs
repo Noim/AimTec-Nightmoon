@@ -24,6 +24,8 @@
                 MyLogic.Menu = new Menu("FlowersVladimir", "Flowers Vladimir", true);
                 {
                     MyLogic.Menu.Add(new MenuSeperator("MadebyNightMoon", "Made by NightMoon"));
+                    MyLogic.Menu.Add(new MenuSeperator("willbeRemove", "This Assembly will be Remove"));
+                    MyLogic.Menu.Add(new MenuSeperator("inthisassembly", "Use SharpAIO (new Version)"));
                     MyLogic.Menu.Add(new MenuSeperator("ASDASDF"));
                 }
 
