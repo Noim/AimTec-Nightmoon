@@ -179,7 +179,7 @@
                     }
                 }
 
-                if (KillStealMenu["FlowersVladimir.KillStealMenu.E"].Enabled && Q.Ready &&
+                if (KillStealMenu["FlowersVladimir.KillStealMenu.E"].Enabled && E.Ready &&
                     Game.TickCount - lastQTime > 1500 + Game.Ping)
                 {
                     foreach (
