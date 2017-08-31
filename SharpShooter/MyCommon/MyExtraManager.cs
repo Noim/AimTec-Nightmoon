@@ -127,11 +127,6 @@
                         }
                     }
                 }
-                else
-                {
-                    damage += ObjectManager.GetLocalPlayer()
-                        .GetSpellDamage(target, SpellSlot.E, Aimtec.SDK.Damage.JSON.DamageStage.Buff);
-                }
             }
 
             if (r && ObjectManager.GetLocalPlayer().GetSpell(SpellSlot.R).State == SpellState.Ready)
