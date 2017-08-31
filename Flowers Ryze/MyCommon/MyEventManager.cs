@@ -606,7 +606,7 @@
         {
             try
             {
-                if (Me.ManaPercent() >= ClearMenu["FlowersRyze.ClearMenu.LaneClearMana"].Value && E.Ready)
+                if (Me.ManaPercent() >= ClearMenu["FlowersRyze.ClearMenu.LaneClearMana"].Value)
                 {
                     var minions = GameObjects.EnemyMinions.Where(x => x.IsValidTarget(Q.Range) && x.IsMinion()).ToArray();
 
