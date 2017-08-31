@@ -31,6 +31,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flowers Vladimir", "Flowers Vladimir\Flowers Vladimir.csproj", "{C32A2A2A-E32C-49C9-A24C-FB47CB1FED81}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharp AIO", "Sharp AIO\Sharp AIO.csproj", "{E661AADB-05BD-4626-A28D-B55431D50FEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{C32A2A2A-E32C-49C9-A24C-FB47CB1FED81}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C32A2A2A-E32C-49C9-A24C-FB47CB1FED81}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C32A2A2A-E32C-49C9-A24C-FB47CB1FED81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E661AADB-05BD-4626-A28D-B55431D50FEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E661AADB-05BD-4626-A28D-B55431D50FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E661AADB-05BD-4626-A28D-B55431D50FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E661AADB-05BD-4626-A28D-B55431D50FEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
