@@ -572,7 +572,6 @@
             }
 
             var dashPos = Me.ServerPosition.Extend(Game.CursorPos, E.Range);
-
             if (dashPos.IsWall() && ComboOption.GetBool("ComboEWall").Enabled)
             {
                 return;
@@ -584,8 +583,10 @@
                 return;
             }
 
-            if (Me.ServerPosition.DistanceToMouse() > Me.GetFullAttackRange(target) &&
-                target.Distance(dashPos) < Me.GetFullAttackRange(target))
+            var realRange = Me.BoundingRadius + target.BoundingRadius + Me.AttackRange;
+            if (Me.ServerPosition.DistanceToMouse() > realRange * 0.60 &&
+                !target.IsValidAutoRange() &&
+                target.ServerPosition.Distance(dashPos) < realRange - 45)
             {
                 E.Cast(dashPos);
             }
